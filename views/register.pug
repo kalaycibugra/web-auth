@@ -1,0 +1,23 @@
+div(class="container well")
+    div(class="col-md-12")
+        if message
+            div(class="alert alert-danger")=message
+        h3(class="dark-grey") Registration
+        form(action="/register" method="post")
+            div(class="form-row")
+                div(class='col-md-6')
+                    input(type="text" name="firstName" class="form-control" placeholder="First Name" required)
+                div(class='col-md-6')
+                    input(type="text" name="lastName" class="form-control" placeholder="Last Name" required)
+            div(class="form-row")
+                div(class='col-md-6')
+                    input(type="text" name="mail" class="form-control" placeholder="Mail" required pattern='\\S+@\S+|\{(?:\w+, *)+\w+\}@[\w.-]+')
+            div(class="form-row")
+                div(class='col-md-6')
+                    input(type="password" name="password" class="form-control" placeholder="Password" required)
+                div(class='col-md-6')
+                    input(type="password" name="rePassword" class="form-control" placeholder="Repeat Password" required)
+            
+            div(class="form-row")
+                div(class='col-md-12')
+                    button(type="button submit" class="btn") Register
